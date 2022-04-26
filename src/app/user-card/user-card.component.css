@@ -1,0 +1,66 @@
+.user-card{
+    width: 20%;
+    margin-top: 3%;
+    font-weight: 300;
+
+}
+
+.user-header{
+    background-color:hsl(246, 80%, 60%);
+    border-radius: 15px;
+    display: flex;
+}
+
+.user-header p{
+    padding-top: 0.5rem;
+    color: bisque;
+    top: 13%;
+    position: relative;
+}
+
+.user-header h2{
+    color: azure;
+    font-weight: 300;
+}
+
+.user-time{
+    background-color:hsl(235, 46%, 20%);  
+    border-radius: 10px;
+    height: 6rem;
+    position:relative;
+    top: -1rem;
+    z-index: -1;
+}
+
+ul{
+    list-style-type: none;
+    text-align: center;
+    margin-top: 0;
+    margin-right: 1.5rem;
+  
+}
+
+li{
+    display: inline-block;
+    font-size: 20px;
+    padding: 20px;
+    padding-right: 24px;
+    margin-top: 1.8rem;
+}
+
+a{
+    text-decoration: none;
+    color: hsl(235, 45%, 61%);
+}
+
+a:hover{
+    color: aliceblue;
+}
+
+img{
+    border: 5px solid white;
+    width: 20%;
+    margin: 6%;
+    border-radius: 50%;
+    margin-left: 2rem;
+}

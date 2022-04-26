@@ -1,0 +1,43 @@
+.time-card{
+    width: 20%;
+}
+
+.back-card{
+    background-color: hsl(15, 100%, 70%);
+    height: 5rem;
+    border-radius: 15px;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 1rem;
+}
+
+.front-card{
+    color: aliceblue;
+    background-color:hsl(235, 46%, 20%);
+    border-radius: 15px;
+    padding: 5%;
+    position: relative;
+    top: -2rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+.front-card h1{
+    font-weight: 300;
+}
+.front-card h3{
+    font-weight: 500;
+}
+
+.previous-week{
+    position: relative;
+    top: -23%;
+}
+
+.submenu{
+    display: flex;
+    justify-content: flex-end;
+    font-size: 2rem;
+    position: relative;
+    top: -15%;
+}
