@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import userData from '../../assets/other/data.json'
+
+interface USERS {
+  title: string
+}
 
 @Component({
   selector: 'home',
@@ -7,7 +12,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  Users: USERS[] = userData;
+
+  constructor() {console.log(this.Users) }
 
   ngOnInit(): void {
   }

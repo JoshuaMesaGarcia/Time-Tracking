@@ -1,42 +1,43 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
+import userData from '../../assets/other/data.json'
+import { TimeService } from '../services/time.service';
+
+interface USERS {
+  title: string,
+  timeframes:{
+    daily:{
+      current: number,
+      previous: number
+    },
+    weekly:{
+      current: number,
+      previous: number
+    },
+    monthly:{
+      current: number,
+      previous: number
+    }
+  }
+}
 
 @Component({
   selector: 'time-card',
   templateUrl: './time-card.component.html',
   styleUrls: ['./time-card.component.css']
 })
-export class TimeCardComponent implements OnInit {
+export class TimeCardComponent {
   
-  cardData = [
-    {
-      title:"Work",
-      time: 32
-    },
-    {
-      title:"Play",
-      time: 10
-    },
-    {
-      title:"Study",
-      time: 4
-    },
-    {
-      title:"Exercise",
-      time: 4
-    },
-    {
-      title:"Social",
-      time: 5
-    },
-    {
-      title:"Self Care",
-      time: 2
-    },
-]
+  Users: USERS[] = userData;
 
-  constructor() { }
+  usertime:any
 
-  ngOnInit(): void {
+  constructor(private timeService:TimeService ) {
+
+    this.timeService.getTime().subscribe(res => {
+      this.usertime = res;
+    })
+
   }
 
+  
 }

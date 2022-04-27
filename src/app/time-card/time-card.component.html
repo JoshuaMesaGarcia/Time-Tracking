@@ -1,15 +1,25 @@
-<div class="time-card">
+<div class="time-card" *ngFor="let user of Users">
     <div class="back-card">
         <img src="../../assets/images/icon-work.svg" alt="">
     </div>
     <div class="front-card">
         <div>
-            <h3 class="title-display">Work</h3>
-            <h1 class="time">32hrs</h1>
+            <h3 class="title-display">{{user.title}}</h3>
+            
+        <ng-container [ngTemplateOutlet]="usertime === 'weekly' ? weekly : usertime === 'monthly' ? monthly : daily"></ng-container>
+        <ng-template #weekly>
+            <h1 class="time" >{{user.timeframes.weekly.current}}hrs</h1>
+        </ng-template>
+        <ng-template #monthly>
+            <h1 class="time" >{{user.timeframes.monthly.current}}hrs</h1>
+        </ng-template>
+        <ng-template #daily>
+            <h1 class="time" >{{user.timeframes.daily.current}}hrs</h1>
+        </ng-template>
         </div>
         <div>
             <h3 class="submenu">...</h3>
-            <h3 class="previous-week">Last Week - 36hrs</h3>
+            <h3 class="previous-week">Last Week - {{user.timeframes.weekly.previous}}hrs</h3>
         </div>
     </div>    
 </div>
