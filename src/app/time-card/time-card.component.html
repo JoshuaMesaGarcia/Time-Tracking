@@ -1,25 +1,37 @@
 <div class="time-card" *ngFor="let user of Users">
-    <div class="back-card">
-        <img src="../../assets/images/icon-work.svg" alt="">
+    <div class="back-card" [style.background]="user.backgroundColor">
+        <img src="../../assets/images/{{user.urlImg}}.svg" alt="">
     </div>
     <div class="front-card">
         <div>
             <h3 class="title-display">{{user.title}}</h3>
             
         <ng-container [ngTemplateOutlet]="usertime === 'weekly' ? weekly : usertime === 'monthly' ? monthly : daily"></ng-container>
-        <ng-template #weekly>
-            <h1 class="time" >{{user.timeframes.weekly.current}}hrs</h1>
-        </ng-template>
-        <ng-template #monthly>
-            <h1 class="time" >{{user.timeframes.monthly.current}}hrs</h1>
-        </ng-template>
+        
         <ng-template #daily>
             <h1 class="time" >{{user.timeframes.daily.current}}hrs</h1>
         </ng-template>
+       
+        <ng-template #weekly>
+            <h1 class="time" >{{user.timeframes.weekly.current}}hrs</h1>
+        </ng-template>
+       
+        <ng-template #monthly>
+            <h1 class="time" >{{user.timeframes.monthly.current}}hrs</h1>
+        </ng-template> 
         </div>
-        <div>
+        <div class="voyaprobar">
             <h3 class="submenu">...</h3>
-            <h3 class="previous-week">Last Week - {{user.timeframes.weekly.previous}}hrs</h3>
+            <ng-container [ngTemplateOutlet]="usertime === 'weekly' ? preWeekly : usertime === 'monthly' ? preMonthly : preDaily"></ng-container>
+            <ng-template #preDaily>
+                <h3 class="previous-week">Yesterday - {{user.timeframes.daily.previous}}hrs</h3> 
+            </ng-template>
+            <ng-template #preWeekly>
+                <h3 class="previous-week">Last Week - {{user.timeframes.weekly.previous}}hrs</h3>
+            </ng-template>
+            <ng-template #preMonthly>
+                <h3 class="previous-week">Last Month - {{user.timeframes.monthly.previous}}hrs</h3>
+            </ng-template>
         </div>
     </div>    
 </div>

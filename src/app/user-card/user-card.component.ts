@@ -7,9 +7,7 @@ import { TimeService } from '../services/time.service';
 })
 export class UserCardComponent implements OnInit {
 
-  constructor(private timeService:TimeService) {
-    
-   }
+  constructor(private timeService:TimeService) { }
 
   ngOnInit(): void {
     
@@ -18,5 +16,6 @@ export class UserCardComponent implements OnInit {
 
   currentTime(userTime:any){
     this.timeService.updateTime(userTime);
+   
   }
 }

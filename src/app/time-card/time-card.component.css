@@ -1,43 +1,89 @@
-.time-card{
-    width: 20%;
+@media only screen and (min-width: 375px) {
+    .time-card{
+        width: 98%;
+    }
+    
+    .back-card{
+        
+        height: 5rem;
+        border-radius: 15px;
+        display: flex;
+        justify-content: flex-end;
+        padding-right: 1rem;
+    }
+    
+    .front-card{
+        color: aliceblue;
+        background-color:hsl(235, 46%, 20%);
+        border-radius: 15px;
+        padding: 5%;
+        position: relative;
+        top: -2rem;
+        display: flex;
+        justify-content: space-around;
+    }
+    
+    .front-card h1{
+        font-weight: 300;
+    }
+    .front-card h3{
+        font-weight: 500;
+    }
+    
+    .previous-week{
+        position: relative;
+        top: -23%;
+    }
+    
+    .submenu{
+        display: flex;
+        justify-content: flex-end;
+        font-size: 2rem;
+        position: relative;
+        top: -15%;
+    }
+
 }
 
-.back-card{
-    background-color: hsl(15, 100%, 70%);
-    height: 5rem;
-    border-radius: 15px;
-    display: flex;
-    justify-content: flex-end;
-    padding-right: 1rem;
-}
+@media only screen and (min-width: 1440px){
 
-.front-card{
-    color: aliceblue;
-    background-color:hsl(235, 46%, 20%);
-    border-radius: 15px;
-    padding: 5%;
-    position: relative;
-    top: -2rem;
-    display: flex;
-    justify-content: space-around;
-}
+    .time-card{
+        display: inline-grid;
+        width: 21%;
+        margin-left: 67px;
+        position: relative;
+        top: 5%;
+        height: 48.5%;
+    }
 
-.front-card h1{
-    font-weight: 300;
-}
-.front-card h3{
-    font-weight: 500;
-}
+    .front-card{
+        padding-left: 15px;
+    }
 
-.previous-week{
-    position: relative;
-    top: -23%;
-}
+    .time-card:hover{
+      cursor: pointer;
+    }
 
-.submenu{
-    display: flex;
-    justify-content: flex-end;
-    font-size: 2rem;
-    position: relative;
-    top: -15%;
+    .front-card:hover{
+        background-color: hsl(236, 21%, 37%);
+    }
+
+    .front-card h1{
+        font-size: 3.2rem;
+        position: relative;
+        top: -8%;
+    }
+    
+    .previous-week{
+        position: relative;
+        top: 20%;
+        right: 78%;
+        font-size: 1rem;
+        color:hsl(235, 45%, 61%);
+        width: 150%;
+    }
+
+    .voyaprobar{
+        width: 100%;
+    }
 }

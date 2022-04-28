@@ -4,6 +4,8 @@ import { TimeService } from '../services/time.service';
 
 interface USERS {
   title: string,
+  urlImg: string,
+  backgroundColor: string,
   timeframes:{
     daily:{
       current: number,
